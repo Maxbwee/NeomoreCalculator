@@ -15,6 +15,7 @@ export default function Calculator() {
 
     // Handles users click of the buttons
     const handleButtonClick = (value) => {
+        
         setInput((prevInput) => prevInput + value)
     };
 
@@ -50,6 +51,7 @@ export default function Calculator() {
             <Grid  container spacing={3} justifyContent="center" alignItems="center" marginTop={2}>
             <Grid item xs={3}>
                 <Button
+                data-testid="input"
                 variant="contained"
                 style={{ backgroundColor: '#E3CAA5', color: 'black'}}
                 onClick={() => handleButtonClick('1')}

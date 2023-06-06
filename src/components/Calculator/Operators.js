@@ -1,4 +1,9 @@
 
+// SCRAPPED
+// Initial way of thinking about how to handle the different operations
+// Left this in here to show initial thinking about the application logic.
+// In production you would leave this out obviously.
+  
   /*   const handleEqualClick = () => {
         try {
           const tokens = input.split(' '); // Split the input by spaces
