@@ -2,15 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
 }
 
 .customCard{
     width: 600px; /* Adjust width as needed */
-    height: 300px; /* Adjust height as needed */
-    background-color: #EBEBEB;
+    height: 400px; /* Adjust height as needed */
+    background-color: #DAD0C2;
 }
 
-.customButton{
-    background-color: #BBBFCA;
+.customButton .MuiButton-label {
+    background-color: '#BBBFCA ';
+     color: 'black';
 }
+
+
+/*#BBBFCA  Button colour */
