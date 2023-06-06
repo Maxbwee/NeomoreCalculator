@@ -5,7 +5,7 @@ import { Grid, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "../styles/Styles.css"; // import the style.css file
-import * as math from 'mathjs';
+import * as math from 'mathjs'; // importing mathjs used for calculations
 
 
 export default function Calculator() {
@@ -33,9 +33,10 @@ export default function Calculator() {
             setInput('Error')
         }
     }
+    
 
     return(
-      <div className="cardContainer">
+        <div className="cardContainer">
         <Card className="customCard"
         style={{backgroundColor: '#F4DFD0'}}
         >
@@ -195,9 +196,7 @@ export default function Calculator() {
                 </Button>
             </Grid>
             </Grid>
-
             </CardContent>
-
         </Card>
         </div>
     )

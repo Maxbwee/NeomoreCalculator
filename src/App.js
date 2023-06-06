@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-         Neomore calculator!
+         Neomore calculator
         </p>
       </header>
       <Calculator/>
