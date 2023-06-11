@@ -11,8 +11,10 @@ import * as math from 'mathjs'; // importing mathjs used for calculations
 export default function Calculator() {
 
     // Used as the users inputted numbers
-    const [input, setInput] = useState(''); 
+    const [input, setInput] = useState('');
+    const [history, setHistory] = useState([]);
 
+   
     // Handles users click of the buttons
     const handleButtonClick = (value) => {
         
@@ -29,6 +31,8 @@ export default function Calculator() {
         try {
             const result = math.evaluate(input);
             setInput(result.toString());
+            setHistory((prevHistory) => [...prevHistory, { equation : input, result}]);
+           
         } catch (error) {
             setInput('Error')
         }
@@ -36,7 +40,20 @@ export default function Calculator() {
     
 
     return(
-        <div className="cardContainer">
+        <div>
+           {/* Display the history */}
+           {history.length > 0 && (
+            <div>
+              <Typography style={{ fontSize: 14, marginTop: 10 }}> History </Typography>
+              {history.map((calculation, index) => (
+                <div key={index}>
+                  <Typography> {calculation.equation} = {calculation.result} </Typography>
+                  
+                </div>
+              ))}
+            </div>
+          )} 
+        <div className="cardContainer"> 
         <Card className="customCard"
         style={{backgroundColor: '#F4DFD0'}}
         >
@@ -49,6 +66,7 @@ export default function Calculator() {
                 onChange={(e) => setInput(e.target.value)}
                 fullWidth
             />
+            
             <Grid  container spacing={3} justifyContent="center" alignItems="center" marginTop={2}>
             <Grid item xs={3}>
                 <Button
@@ -197,7 +215,10 @@ export default function Calculator() {
             </Grid>
             </Grid>
             </CardContent>
+            
         </Card>
+        
+        </div>
         </div>
     )
 }
